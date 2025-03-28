@@ -7,7 +7,7 @@ PDIPV6TUN
 - Tron(TRX) `TRwa4tZretyDndiUwCEZYokKoe1ezSQxsE`
 </br>
 </br>
-###اسکریپت تونل IPv6
+### اسکریپت تونل IPv6
 برای استفاده از اسکریپت، کافی است فرمان زیر را برای دانلود و اجرای آن اجرا کنید:
 
 نصب
