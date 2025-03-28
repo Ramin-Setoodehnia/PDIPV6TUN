@@ -1,4 +1,4 @@
-[English](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.md)  | [Persian](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.fa.md)
+[English](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.md)  | [Persian](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/Readme.fa.md)
 
 PDIPV6TUN
 
