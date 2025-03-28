@@ -1,3 +1,5 @@
+[English](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.md)  | [Persian](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.fa.md)
+
 # PDIPV6TUN
 IPV6 Tunnel High Speed
 
