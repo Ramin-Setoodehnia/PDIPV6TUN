@@ -10,7 +10,7 @@ PDIPV6TUN
 
 ### برای استفاده از اسکریپت، کافی است فرمان زیر را برای دانلود و نصب آن اجرا کنید :
 
-نصب
+
 ```bash
 
 bash <(curl -Ls https://raw.githubusercontent.com/Mehdi682007/PDIPV6TUN/main/install.sh)
