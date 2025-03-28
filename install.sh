@@ -2,31 +2,32 @@
 
 # بررسی وضعیت نصب تونل
 if grep -q "tunnel-PD" /etc/rc.local 2>/dev/null; then
-    STATUS="\e[32m✅ Installed\e[0m"  # تیک سبز برای نصب شده
+    STATUS="\e[32m✅ Installed\e[0m"  # رنگ سبز برای نصب شده
 else
-    STATUS="\e[31m❌ Not Installed\e[0m"  # ضربدر قرمز برای نصب نشده
+    STATUS="\e[31m❌ Not Installed\e[0m"  # رنگ قرمز برای نصب نشده
 fi
+
+# گرفتن IP محلی سرور
+LOCAL_IP=$(hostname -I | awk '{print $1}')
 
 while true; do
     clear
-    echo -e "\e[1m\e[38;5;39m==============================\e[0m"  # آبی کم‌رنگ و بولد
-    echo -e "\e[1m\e[38;5;39m      PDIPV6TUN Installer     \e[0m"  # آبی کم‌رنگ و بولد
-    echo -e "\e[1m\e[38;5;39m==============================\e[0m"  # آبی کم‌رنگ و بولد
-    echo -e "\e[1mTunnel Status: $STATUS\e[0m"  # وضعیت نصب تونل
-    echo -e "\e[1m==============================\e[0m"  # بولد کردن خط جداکننده
-    echo -e "\e[1m| 1) Install Tunnel          |\e[0m"
-    echo -e "\e[1m| 2) Show Assigned Local IPv6|\e[0m"
-    echo -e "\e[1m| 3) Remove Tunnel           |\e[0m"
-    echo -e "\e[1m| 4) Exit                    |\e[0m"
-    echo -e "\e[1m==============================\e[0m"  # بولد کردن خط جداکننده
+    echo -e "=============================="
+    echo -e "      PDIPV6TUN Installer     "
+    echo -e "=============================="
+    echo -e " Tunnel Status: $STATUS"
+    echo -e "=============================="
+    echo -e "| 1) Install Tunnel           |"
+    echo -e "| 2) Show Assigned Local IPv6 |"
+    echo -e "| 3) Remove Tunnel            |"
+    echo -e "| 4) Exit                     |"
+    echo -e "=============================="
     read -p "Select an option: " OPTION
 
     case $OPTION in
         1)
             echo "Enter remote IPv4 address: "
             read REMOTE_IP
-            echo "Enter local IPv4 address: "
-            read LOCAL_IP
             echo "Enter local IPv6 address: "
             read LOCAL_IPV6
 
