@@ -2,23 +2,23 @@
 
 # بررسی وضعیت نصب تونل
 if grep -q "tunnel-PD" /etc/rc.local 2>/dev/null; then
-    STATUS="\e[32mInstalled\e[0m"  # رنگ سبز برای نصب شده
+    STATUS="\e[42m\e[1;37m Installed \e[0m"  # پس‌زمینه سبز برای نصب شده
 else
-    STATUS="\e[31mNot Installed\e[0m"  # رنگ قرمز برای نصب نشده
+    STATUS="\e[41m\e[1;37m Not Installed \e[0m"  # پس‌زمینه قرمز برای نصب نشده
 fi
 
 while true; do
     clear
-    echo -e "=============================="
-    echo -e "      PDIPV6TUN Installer     "
-    echo -e "=============================="
+    echo -e "\e[32m==============================\e[0m"
+    echo -e "\e[34m      PDIPV6TUN Installer     \e[0m"
+    echo -e "\e[32m==============================\e[0m"
     echo -e " Tunnel Status: $STATUS"
-    echo -e "=============================="
-    echo "1) Install Tunnel"
-    echo "2) Show Assigned Local IPv6"
-    echo "3) Remove Tunnel"
-    echo "4) Exit"
-    echo "=============================="
+    echo -e "\e[32m==============================\e[0m"
+    echo -e "\e[33m1) Install Tunnel\e[0m"
+    echo -e "\e[33m2) Show Assigned Local IPv6\e[0m"
+    echo -e "\e[33m3) Remove Tunnel\e[0m"
+    echo -e "\e[33m4) Exit\e[0m"
+    echo -e "\e[32m==============================\e[0m"
     read -p "Select an option: " OPTION
 
     case $OPTION in
@@ -56,7 +56,7 @@ EOF
             # دادن مجوز اجرایی به rc.local
             sudo chmod +x /etc/rc.local
 
-            echo "Tunnel setup completed and configured in /etc/rc.local"
+            echo -e "\e[32mTunnel setup completed and configured in /etc/rc.local\e[0m"
             read -p "Do you want to reboot the server now? (y/n): " REBOOT_CHOICE
             if [[ "$REBOOT_CHOICE" == "y" ]]; then
                 sudo reboot
@@ -64,33 +64,33 @@ EOF
             read -p "Press Enter to continue..."
             ;;
         2)
-            echo "Assigned Local IPv6 Address:"
+            echo -e "\e[36mAssigned Local IPv6 Address:\e[0m"
             grep -oP 'ip addr add \K[^ ]+' /etc/rc.local 2>/dev/null || echo "No IPv6 assigned."
             read -p "Press Enter to continue..."
             ;;
         3)
             read -p "Are you sure you want to remove the tunnel? (y/n): " CONFIRM_DELETE
             if [[ "$CONFIRM_DELETE" == "y" ]]; then
-                echo "Removing tunnel..."
+                echo -e "\e[31mRemoving tunnel...\e[0m"
                 sudo ip link set tunnel-PD down
                 sudo ip tunnel del tunnel-PD
                 sudo rm -f /etc/rc.local
-                echo "Tunnel removed successfully."
+                echo -e "\e[32mTunnel removed successfully.\e[0m"
                 read -p "Do you want to reboot the server now? (y/n): " REBOOT_CHOICE
                 if [[ "$REBOOT_CHOICE" == "y" ]]; then
                     sudo reboot
                 fi
             else
-                echo "Tunnel removal canceled."
+                echo -e "\e[33mTunnel removal canceled.\e[0m"
             fi
             read -p "Press Enter to continue..."
             ;;
         4)
-            echo "Exiting..."
+            echo -e "\e[35mExiting...\e[0m"
             exit 0
             ;;
         *)
-            echo "Invalid option!"
+            echo -e "\e[31mInvalid option!\e[0m"
             read -p "Press Enter to continue..."
             ;;
     esac
