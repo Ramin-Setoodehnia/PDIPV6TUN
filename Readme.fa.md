@@ -1,3 +1,4 @@
+[English](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.md)  | [Persian](https://github.com/Mehdi682007/PDIPV6TUN/blob/main/README.fa.md)
 PDIPV6TUN
 تونل IPV6 با سرعت بالا
 
@@ -47,7 +48,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/Mehdi682007/PDIPV6TUN/main/ins
 
 نیازمندی‌ها: دسترسی sudo: اسکریپت برای پیکربندی رابط‌های شبکه و تغییر فایل /etc/rc.local نیاز به دسترسی‌های مدیریتی دارد.
 
-iproute2: این بسته برای مدیریت رابط‌های شبکه لازم است.
+## بسته مورد نیاز iproute2 (معمولا بصورت پیشفرض روی سرورها نصب شده است): این بسته برای مدیریت رابط‌های شبکه لازم است.
 
 ## اسکریپت گزینه‌های زیر را به کاربر نمایش می‌دهد:
 
