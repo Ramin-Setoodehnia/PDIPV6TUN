@@ -14,7 +14,7 @@ To use the script, simply run the following command to download and execute it:
 # Install
 
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/Mehdi682007/PDIPV6TUN/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Ramin-Setoodehnia/PDIPV6TUN/main/install.sh)
 
 ```
 Explanation of the PDIPV6TUN Installer Script:
